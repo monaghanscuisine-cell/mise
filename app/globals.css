@@ -1,0 +1,40 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink:   #1a1a18;
+  --color-paper: #faf9f6;
+  --color-stone: #6b6b63;
+  --color-rule:  #e2e0da;
+  --color-sage:  #4a5e4a;
+  --color-amber: #c47c2b;
+  --color-rust:  #b34b3a;
+}
+
+html {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media print {
+  @page { size: Letter portrait; margin: 0.75in; }
+  html, body {
+    font-family: Georgia, Cambria, "Times New Roman", serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: black;
+    background: white;
+  }
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  img { page-break-inside: avoid; max-width: 100%; }
+  a[href]::after { content: none; }
+}
